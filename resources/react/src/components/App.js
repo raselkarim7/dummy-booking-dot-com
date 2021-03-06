@@ -14,6 +14,8 @@ import Login from './Login'
 import Register from './Register'
 
 
+import ProtectedRoute from './ProtectedRoute'
+
 
 function App() {
     return (
@@ -23,7 +25,7 @@ function App() {
                     <Switch> 
                         <Route path="/" component={LandingPage} exact={true} />
                         <Route path="/detail/:id" exact component={DetailPage} />
-                        <Route path="/search" component={SearchPage}  />
+                        <ProtectedRoute path="/search" component={SearchPage}  />
                         <Route path="/login" component={Login}  />
                         <Route path="/register" component={Register}  />
 
