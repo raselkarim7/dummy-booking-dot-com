@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../css/App.css'
+import {BrowserRouter as Router, Switch, Route  } from "react-router-dom";
 
+import '../css/App.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
+import LandingPage from './LandingPage'
+import DetailPage from './DetailPage'
+import SearchPage from './SearchPage'
+
+import Login from './Login'
+import Register from './Register'
+
+
+
 function App() {
     return (
-        <div className="container">
-           <Navbar />
-           <h1> I am App Component . </h1>
-           <Footer />
-        </div>
+        <Router>
+            <div className="App">
+                <Navbar />
+                    <Switch> 
+                        <Route path="/" component={LandingPage} exact={true} />
+                        <Route path="/detail/:id" exact component={DetailPage} />
+                        <Route path="/search" component={SearchPage}  />
+                        <Route path="/login" component={Login}  />
+                        <Route path="/register" component={Register}  />
+
+                    </Switch>
+                <Footer />
+            </div>
+        </Router>
+        
     );
 }
 

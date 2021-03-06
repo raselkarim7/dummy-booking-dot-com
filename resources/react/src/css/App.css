@@ -1,3 +1,15 @@
 body {
     background: rgb(223, 213, 213);
 }
+
+.register-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form span, .login-form span {
+    display: block;
+}
+
