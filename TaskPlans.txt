@@ -7,4 +7,19 @@ Step 1:
 4. Handling Reg, Login & Handling Protected Routes. 
 
 Step 2: 
+1. Designing Header & Footer by CSS. 
+2. Designing Search Component by CSS Grid. 
+
+Step 3: 
 1. Design Database
+	1. Till now, we have only "users" table. (Also have other tables by laravel (jwt & migrations related.)) 
+	2. Tables Needed: 
+		1. properties (id,  title, description, country, city, available_start_date, available_end_date, type)
+		2. photos (id, path)
+		3. propery_photos (property_id, photo_id)
+		4. comments (id, comment, rating, property_id, user_name )
+		
+Ste 4:
+1. Design the middle section of detail page. 
+2. Design the middle section of search page. 
+3. Design the middle section of landing page

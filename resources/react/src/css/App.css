@@ -1,5 +1,13 @@
-body {
-    background: rgb(223, 213, 213);
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
 }
 
 .register-form, .login-form {

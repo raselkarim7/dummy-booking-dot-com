@@ -69,7 +69,7 @@ const Register = () => {
 
                 <label >
                     <span>Confirm Password: </span>
-                    <input id="password_confirmation" name="password_confirmation" type="password_confirmation" required onChange={(event) => setPassword_confirmation(event.target.value)} />
+                    <input id="password_confirmation" name="password_confirmation" type="password" required onChange={(event) => setPassword_confirmation(event.target.value)} />
                 </label>
                 <br />
                 <input type="submit" value="Submit" />
