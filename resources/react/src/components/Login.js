@@ -34,12 +34,10 @@ const Login = () => {
     }
 
     return (
-        <div> 
-            <h1> Login Page </h1>
-
-            { JSON.stringify(remember_me)}
-            
-            <form className="login-form" onSubmit={handleSubmit}>
+        <div > 
+            <h1 className="text-center p-5 m-5" > Login </h1>
+        
+            <form className="simple-basic-form" onSubmit={handleSubmit}>
                 
                 <label >
                     <span>Email: </span>
@@ -57,7 +55,7 @@ const Login = () => {
                     <input id="remember_me" name="remember_me" type="checkbox" onChange={(event) => setRememberMe(event.target.checked)} />
                 </label>
                 <br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Login" />
 
                 
             </form>
