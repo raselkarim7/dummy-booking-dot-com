@@ -3,6 +3,21 @@ import  http   from './http_service';
 import axios from 'axios';
 import storage from '../utils/storage'
 
+export function register(data) {
+    return new Promise((resolve, reject) => {
+        http({
+            method: 'post', 
+            url: 'auth/signup', 
+            data: data
+        }).then(response => {
+            resolve( response ); 
+        }).catch(error => {
+            reject(error)
+        })
+    }); 
+    
+}
+
 export function login(data) {
     return new Promise((resolve, reject) => {
         http({
@@ -20,7 +35,7 @@ export function login(data) {
         }).catch(error => {
             reject(error)
         })
-       }); 
+    }); 
     
 }
 

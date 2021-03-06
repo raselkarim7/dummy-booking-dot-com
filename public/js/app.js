@@ -71707,8 +71707,17 @@ var ProtectedRoute = function ProtectedRoute(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/auth_service */ "./resources/react/src/service/auth_service.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -71723,43 +71732,171 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Register = function Register() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
       name = _useState2[0],
       setName = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
       _useState4 = _slicedToArray(_useState3, 2),
       email = _useState4[0],
       setEmail = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
       _useState6 = _slicedToArray(_useState5, 2),
       password = _useState6[0],
       setPassword = _useState6[1];
 
-  var handleSubmit = function handleSubmit(event) {
-    event.preventDefault();
-    console.log('register event === ', event);
-  };
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      password_confirmation = _useState8[0],
+      setPassword_confirmation = _useState8[1];
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Register Page "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(event) {
+      var user, response, _response;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              event.preventDefault();
+
+              if (!(password !== "" && password_confirmation !== password)) {
+                _context.next = 4;
+                break;
+              }
+
+              alert('password not matched');
+              return _context.abrupt("return");
+
+            case 4:
+              user = {
+                name: name,
+                email: email,
+                password: password,
+                password_confirmation: password_confirmation
+              };
+              console.log('Register.js, user === ', user);
+              _context.prev = 6;
+              _context.next = 9;
+              return _service_auth_service__WEBPACK_IMPORTED_MODULE_2__["register"](user);
+
+            case 9:
+              response = _context.sent;
+              console.log('register response = ', response);
+              _context.prev = 11;
+              _context.next = 14;
+              return _service_auth_service__WEBPACK_IMPORTED_MODULE_2__["login"](user);
+
+            case 14:
+              _response = _context.sent;
+              fethUserNow();
+              console.log('login response = ', _response);
+              _context.next = 21;
+              break;
+
+            case 19:
+              _context.prev = 19;
+              _context.t0 = _context["catch"](11);
+
+            case 21:
+              fethUserNow();
+              _context.next = 26;
+              break;
+
+            case 24:
+              _context.prev = 24;
+              _context.t1 = _context["catch"](6);
+
+            case 26:
+              console.log('register event === ', event, user);
+
+            case 27:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[6, 24], [11, 19]]);
+    }));
+
+    return function handleSubmit(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var fethUserNow = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _context2.next = 3;
+              return _service_auth_service__WEBPACK_IMPORTED_MODULE_2__["getUser"]();
+
+            case 3:
+              response = _context2.sent;
+              console.log("user --------> ", response.data);
+              _context2.next = 9;
+              break;
+
+            case 7:
+              _context2.prev = 7;
+              _context2.t0 = _context2["catch"](0);
+
+            case 9:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 7]]);
+    }));
+
+    return function fethUserNow() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " Register Page "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
     className: "register-form",
     onSubmit: handleSubmit
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Name: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Name: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
     id: "name",
     name: "name",
-    type: "text"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Email: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    required: true,
+    onChange: function onChange(event) {
+      return setName(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Email: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
     id: "email",
     name: "email",
-    type: "email"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "email",
+    required: true,
+    onChange: function onChange(event) {
+      return setEmail(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
     id: "password",
     name: "password",
-    type: "password"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "password",
+    required: true,
+    onChange: function onChange(event) {
+      return setPassword(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Confirm Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+    id: "password_confirmation",
+    name: "password_confirmation",
+    type: "password_confirmation",
+    required: true,
+    onChange: function onChange(event) {
+      return setPassword_confirmation(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
     type: "submit",
     value: "Submit"
   })));
@@ -71824,11 +71961,12 @@ if(false) {}
 /*!*****************************************************!*\
   !*** ./resources/react/src/service/auth_service.js ***!
   \*****************************************************/
-/*! exports provided: login, getUser, isLoggedIn, logout */
+/*! exports provided: register, login, getUser, isLoggedIn, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isLoggedIn", function() { return isLoggedIn; });
@@ -71840,6 +71978,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function register(data) {
+  return new Promise(function (resolve, reject) {
+    Object(_http_service__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      method: 'post',
+      url: 'auth/signup',
+      data: data
+    }).then(function (response) {
+      resolve(response);
+    })["catch"](function (error) {
+      reject(error);
+    });
+  });
+}
 function login(data) {
   return new Promise(function (resolve, reject) {
     Object(_http_service__WEBPACK_IMPORTED_MODULE_0__["default"])({
