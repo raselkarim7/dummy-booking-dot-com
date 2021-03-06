@@ -11,8 +11,10 @@ html, body {
 }
 
 :root {
-    --app-font-color: #444;
-    --app-font-color-light: #555;
+    --app-font-color: #484848;
+    --app-font-color-light: #838383;
+    --app-footer-border-color: #DBDBDB;
+    --app-content-width: 72%;
 
   }
 
@@ -141,3 +143,90 @@ html, body {
 
 
 
+
+
+
+
+
+/* Footer Style */
+footer {
+    border-top: 2px solid var(--app-footer-border-color);
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    color: var(--app-font-color);
+}
+
+footer > div {
+    margin-top: 40px;
+    min-width: var(--app-content-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .top {
+    width: 100%;
+    display: flex;
+}
+
+footer .top > div{
+    flex-grow: 1;
+    margin-left: 30px;
+}
+footer .top > div:first-child{
+    flex-grow: 3;
+}
+
+
+footer .top ul li {
+    display: block;
+    padding: 2px 0px;
+    list-style: none;
+    font-weight: 500;
+    color: var(--app-font-color); /* apply_variable */
+}
+
+footer .top ul li:first-child {
+    margin-bottom: 13px;
+}
+
+.arrow-down {
+    border: solid var(--app-footer-border-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-right: 5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .top div:first-child div  {
+    padding: 10px;
+    border: 2px solid var(--app-footer-border-color);
+    width: 70%;
+    margin: auto;
+    margin-bottom: 5px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer .bottom {
+      border-top: 2px solid var(--app-footer-border-color);
+      width: 100%;
+      margin-top: 40px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+  }
+  footer .bottom ul {
+      display: flex;
+  }
+  footer .bottom ul li {
+    display: block;  
+    margin: 0px 10px;
+    cursor: pointer;
+  }
