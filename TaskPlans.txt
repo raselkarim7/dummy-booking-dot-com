@@ -1,0 +1,10 @@
+Tasks. 
+
+Step 1: 
+1. Download a basic Laravel Project. 
+2. Implement JWT (Laravel Passport) 
+3. Integrate React with Laravel. 
+4. Handling Reg, Login & Handling Protected Routes. 
+
+Step 2: 
+1. Design Database
