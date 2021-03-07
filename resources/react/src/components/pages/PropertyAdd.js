@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import http from '../../service/http_service'
+
 
 const PropertyAdd = () => {
     
@@ -14,7 +16,7 @@ const PropertyAdd = () => {
     const [type, setType] = useState('')
     const [photos, setPhotos] = useState([])
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
 
         console.log('title: ', title)
@@ -27,8 +29,30 @@ const PropertyAdd = () => {
         console.log('photos: ', photos)
 
         console.log('inside handle submit')
+        const formdata = new FormData(); 
 
-        history.push('/search')
+        formdata.append('title', title)
+        formdata.append('description', description)
+        formdata.append('city', city)
+        formdata.append('country', country)
+        formdata.append('available_start_date', available_start_date)
+        formdata.append('available_end_date', available_end_date)
+        formdata.append('type', type)
+        for (let i=0; i<photos.length; i++ ) {
+            let photo = photos[i]
+            formdata.append('photos[]', photo)
+        }
+
+        // history.push('/search')
+        try {
+            const response = await http.post('/property-add', formdata)
+            console.log('response ==== ', response)
+        } catch (error) {
+            console.log('errrrrrrrrr: ', error)
+        }
+        // http.post('/property-add', {name: 'rasel karim'})
+
+
     }
 
     return (
