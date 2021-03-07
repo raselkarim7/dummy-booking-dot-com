@@ -6,12 +6,14 @@ import '../css/App.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-import LandingPage from './LandingPage'
-import DetailPage from './DetailPage'
-import SearchPage from './SearchPage'
+import LandingPage from './pages/LandingPage'
+import DetailPage from './pages/DetailPage'
+import SearchPage from './pages/SearchPage'
 
-import Login from './Login'
-import Register from './Register'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import PropertyAdd from './pages/PropertyAdd'
+import PropertyDetail from './pages/PropertyDetail'
 
 
 import ProtectedRoute from './ProtectedRoute'
@@ -26,9 +28,11 @@ function App() {
                     <Switch> 
                         <Route path="/" component={LandingPage} exact={true} />
                         <Route path="/detail/:id" exact component={DetailPage} />
-                        <ProtectedRoute path="/search" component={SearchPage}  />
+                        <Route path="/search" component={SearchPage}  />
                         <Route path="/login" component={Login}  />
                         <Route path="/register" component={Register}  />
+                        <ProtectedRoute path="/property-add" component={PropertyAdd}  />
+                        <Route path="/property/:id" component={PropertyDetail}  />
                     </Switch>
                     </div>
                 <Footer />

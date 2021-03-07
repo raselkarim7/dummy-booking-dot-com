@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import * as authService from "../service/auth_service";
-import ReusableSearch from './ReusableSearch'; 
+import * as authService from "../../service/auth_service";
+import ReusableSearch from '../search/ReusableSearch'; 
 const SearchPage = () => {
     useEffect(() => {
         console.log('search page use effect: ')

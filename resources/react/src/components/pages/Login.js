@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as authService from "../service/auth_service";
+import * as authService from "../../service/auth_service";
 
 
 const Login = () => {

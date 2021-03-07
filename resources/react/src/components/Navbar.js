@@ -7,33 +7,33 @@ const Navbar = () => {
             <div className="left-side">
                 <div id="top-left-block"> 
                     <div> 
-                        <i class="fas fa-search"></i>
+                        <i className="fas fa-search"></i>
                         Anywhere
                     </div>
                     <div> 
-                        <i class="far fa-calendar"></i>
+                        <i className="far fa-calendar"></i>
                         AnyTime
                     </div>
                     <div> 
-                        <i class="far fa-user"></i>
+                        <i className="far fa-user"></i>
                         1 guest 
                     </div>
                 </div>
                 <div>
                     <ul>
                         <li> <Link to="#" className="selected"> <span>For You</span> </Link> </li>
-                        <li> <Link> <span>Home</span>  </Link> </li>
-                        <li> <Link> <span>Experience</span>  </Link> </li>
-                        <li> <Link> <span>Places</span>  </Link> </li>        
+                        <li> <Link to="/" > <span>Home</span>  </Link> </li>
+                        <li> <Link to="#" > <span>Experience</span>  </Link> </li>
+                        <li> <Link to="#" > <span>Places</span>  </Link> </li>        
                     </ul>
                 </div>
             </div>
             <div className="right-side">
                 <ul>
-                    <li> <Link> Become a host </Link> </li>
-                    <li> <Link> Help </Link> </li>
-                    <li> <Link> SignUp </Link> </li>
-                    <li> <Link> Log In </Link> </li>
+                    <li> <Link to="/property-add"> Become a host </Link> </li>
+                    <li> <Link to="#"> Help </Link> </li>
+                    <li> <Link to="/register"> SignUp </Link> </li>
+                    <li> <Link to="/login"> Log In </Link> </li>
                 </ul>
 
             </div>

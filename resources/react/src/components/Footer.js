@@ -7,10 +7,10 @@ const Footer = () => {
                 <div className="top">
                     <div>
                         <div> 
-                            <span> English </span> <span> <i class="arrow-down"></i> </span> 
+                            <span> English </span> <span> <i className="arrow-down"></i> </span> 
                         </div>
                         <div> 
-                            <span> INR </span> <span> <i class="arrow-down"></i> </span> 
+                            <span> INR </span> <span> <i className="arrow-down"></i> </span> 
                         </div>
                     </div>
 
@@ -61,9 +61,9 @@ const Footer = () => {
                             <li> Terms </li>
                             <li> Privacy </li>
                             <li> Site Map </li>
-                            <li> <i class="fab fa-facebook-f"></i> </li>
-                            <li> <i class="fab fa-twitter"></i> </li>
-                            <li> <i class="fab fa-instagram"></i> </li>
+                            <li> <i className="fab fa-facebook-f"></i> </li>
+                            <li> <i className="fab fa-twitter"></i> </li>
+                            <li> <i className="fab fa-instagram"></i> </li>
                         </ul>
                     </div>
                 </div>
