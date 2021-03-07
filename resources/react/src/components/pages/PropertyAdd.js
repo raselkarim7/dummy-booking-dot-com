@@ -103,7 +103,7 @@ const PropertyAdd = () => {
                 <br />
                 <label >
                     <span>Photos: </span>
-                    <input id="photos" name="photos" type="file" multiple  onChange={(event) => setPhotos(event.target.files)} />
+                    <input id="photos" name="photos" type="file" required multiple  onChange={(event) => setPhotos(event.target.files)} />
                 </label>
                 <br />
 
