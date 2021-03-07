@@ -71,6 +71,10 @@ html, body {
     margin: 35px;
 }
 
+.mt-5 {
+    margin-top: 30px;
+}
+
 .full-width {
     width: 100%;
 }
@@ -350,10 +354,29 @@ html, body {
     grid-column-end: -1;
 }
 .three-img-grid img {
-    height: 100%;
-    width: 100%;
     object-fit: cover;
 }
+
+/* Landing Page */
+.landing-page h1 {
+    color: var(--app-font-color);
+    margin: 20px 0px; 
+}
+.img-cards-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+.img-cards-container i {
+    color: var(--app-font-color-light);
+}
+
+
+.img-cards-container img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+} 
 
 /* Footer Style */
 footer {

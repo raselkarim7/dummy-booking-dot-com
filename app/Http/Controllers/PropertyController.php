@@ -11,7 +11,7 @@ class PropertyController extends Controller
 {
 
     public function index() { 
-        $result = Property::with('photos')->get()->sortBy('created_at'); 
+        $result = Property::with('photos')->with('user')->get()->sortBy('created_at'); 
         return $result;
     }
     public function getMyProperties() {
