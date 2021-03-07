@@ -1,7 +1,13 @@
 import React, { useState, } from 'react';
 import * as authService from "../../service/auth_service";
+import {Link} from 'react-router-dom'
+
+import { useHistory } from "react-router-dom";
+
 
 const Register = () => {
+    let history = useHistory();
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -40,6 +46,10 @@ const Register = () => {
           const response = await authService.getUser();
           console.log("user --------> ", response.data);
 
+          history.push('/property-add')
+          history.go(0)
+
+
         } catch (error) {
           // console.log("wwwwwwww ----------> ", error, error.response);
         }
@@ -75,6 +85,9 @@ const Register = () => {
                 <input type="submit" value="Submit" />
                 
             </form>
+            <div className="text-center p-3">
+                <Link to="/login" > Have an account? Login.</Link>
+            </div>
         </div>
     )
 }

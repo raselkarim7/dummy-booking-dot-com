@@ -68,5 +68,6 @@ export function logout() {
     return http({
         method: 'get', 
         url: '/auth/logout'
+        
     })
 }

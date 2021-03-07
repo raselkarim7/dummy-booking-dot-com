@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import * as authService from "../../service/auth_service";
-
+import {Link} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+
+    let history = useHistory();
+
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -17,7 +21,8 @@ const Login = () => {
             fethUserNow()
 
         } catch (error) {
-            
+            console.log('error', error, error.response)
+            alert(error.response.statusText)
         }
 
         console.log('login event === ', event, user)
@@ -27,6 +32,11 @@ const Login = () => {
         try {
           const response = await authService.getUser();
           console.log("user --------> ", response.data);
+
+          history.push('/property-add')
+          history.go(0)
+
+
 
         } catch (error) {
           // console.log("wwwwwwww ----------> ", error, error.response);
@@ -59,6 +69,10 @@ const Login = () => {
 
                 
             </form>
+            <div className="text-center p-3">
+                <Link to="/register" > Register Now? </Link>
+            </div>
+
         </div>
     )
 }
