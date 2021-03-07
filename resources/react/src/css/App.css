@@ -304,6 +304,57 @@ html, body {
 
 
 
+/* Detail Page Design */
+.detail {
+    margin-top: 30px;
+    width: var(--app-content-width);
+    color: var(--app-font-color);
+}
+
+.detail .title {
+    font-size: 30px;
+}
+
+.detail .type {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.detail .desc {
+    padding-top: 20px!important;
+    font-size: 16px;
+}
+
+.three-img-grid {
+    margin: auto;
+
+    height: 500px;
+    display: grid;
+    row-gap: 2px;
+    column-gap: 2px;
+    grid-template-columns: 3fr 1fr;
+    background: rgb(255, 254, 254);
+}
+
+.three-img-grid .img1 {
+    overflow: hidden;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.three-img-grid .img2 {
+    overflow: hidden;
+    background: grey;
+}
+.three-img-grid .img3 {
+    overflow: hidden;
+    grid-column-start: 2;
+    grid-column-end: -1;
+}
+.three-img-grid img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Footer Style */
 footer {
     border-top: 2px solid var(--app-footer-border-color);
