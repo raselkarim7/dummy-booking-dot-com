@@ -46,6 +46,8 @@ const PropertyAdd = () => {
         // history.push('/search')
         try {
             const response = await http.post('/property-add', formdata)
+            alert('Property added successfully')
+            history.push('/my-properties')
             console.log('response ==== ', response)
         } catch (error) {
             console.log('errrrrrrrrr: ', error)

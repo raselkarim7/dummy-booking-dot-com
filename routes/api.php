@@ -36,9 +36,14 @@ Route::group([
     });
 });
 
+Route::get('properties', 'PropertyController@index');
+Route::get('properties/{id}', 'PropertyController@singleProperty');
+
 Route::group([
     'middleware' => 'auth:api'
 ], function() {
     Route::post('property-add', 'PropertyController@store');
+    Route::get('my-properties', 'PropertyController@getMyProperties');
+
 
 });

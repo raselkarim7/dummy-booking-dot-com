@@ -10,14 +10,25 @@ use App\Photo;
 class PropertyController extends Controller
 {
 
+    public function index() { 
+        $result = Property::with('photos')->get()->sortBy('created_at'); 
+        return $result;
+    }
+    public function getMyProperties() {
+        $user_id = Auth::id(); 
+        $result = Property::where('owner_id', $user_id)->with('photos')->get()->sortBy('created_at'); 
+        return $result;
+    }
+
+    public function singleProperty(Request $request, $id) {
+        $result = Property::where('id', $id)->with('photos')->first(); 
+        return $result; 
+    }
+
     public function store(Request $request)
     {
 
-        // dd($this->generateRandomString());
-        // dd($request->all()); 
-
-        $property = new Property();
-        
+        $property = new Property();        
         $property->title = $request->title; 
         $property->description = $request->description; 
         $property->city = $request->city; 
@@ -26,9 +37,7 @@ class PropertyController extends Controller
         $property->available_end_date = $request->available_end_date; 
         $property->type = $request->type; 
         $property->owner_id = Auth::id();
-
         $saved = $property->save();
-
 
         if ($saved) {
             if ($request->hasfile('photos')) {
