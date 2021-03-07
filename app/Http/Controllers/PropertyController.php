@@ -38,6 +38,7 @@ class PropertyController extends Controller
                     $img_path = '/property/'. $name;
                     $photo = new Photo();
                     $photo->img_path = $img_path;
+                    $photo->property_id = $property->id;
                     $photo->save();
                 }
             }
