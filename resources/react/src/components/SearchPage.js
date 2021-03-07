@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import * as authService from "../service/auth_service";
-
+import ReusableSearch from './ReusableSearch'; 
 const SearchPage = () => {
     useEffect(() => {
         console.log('search page use effect: ')
@@ -17,60 +17,8 @@ const SearchPage = () => {
     }
 
     return (
-        <div> 
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
-            <h1> SearchPage Page </h1>
+        <div className="m-7">     
+            <ReusableSearch />
         </div>
     )
 }

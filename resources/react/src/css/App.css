@@ -64,6 +64,12 @@ html, body {
 .m-5 {
     margin: 25px;
 }
+.m-6 {
+    margin: 30px;
+}
+.m-7 {
+    margin: 35px;
+}
 
 
 
@@ -143,6 +149,64 @@ html, body {
 
 
 
+
+/* APP CONTENT */
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.app-container > div {
+    display: block;
+    min-width: var(--app-content-width);
+}
+
+/* Reusable Search */
+.reusable-search {
+    background-image: url('../assets/lavender.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 5px;
+}
+
+.reusable-search > div:first-child {
+    color: white;
+}
+.reusable-search > div:first-child p {
+    font-size: 16px;
+}
+
+.search-field-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1.7fr 2fr 1.2fr;
+    background: #F5BC42;
+    border-radius: 5px;
+    grid-gap: 5px;
+    padding: 5px;
+}
+
+.search-field-wrapper div {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px 10px;
+    font-weight: 600;
+    color: var(--app-font-color);
+}
+
+.search-field-wrapper div:nth-child(2), .search-field-wrapper div:nth-child(3) {
+    justify-content: space-between;
+}
+
+.search-field-wrapper  div:last-child {
+    display: flex;
+    justify-content: center;
+    background: #3178C6;
+    color: white;
+}
 
 
 

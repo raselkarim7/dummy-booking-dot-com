@@ -22,14 +22,15 @@ function App() {
         <Router>
             <div className="App">
                 <Navbar />
+                    <div className="app-container">
                     <Switch> 
                         <Route path="/" component={LandingPage} exact={true} />
                         <Route path="/detail/:id" exact component={DetailPage} />
                         <ProtectedRoute path="/search" component={SearchPage}  />
                         <Route path="/login" component={Login}  />
                         <Route path="/register" component={Register}  />
-
                     </Switch>
+                    </div>
                 <Footer />
             </div>
         </Router>
